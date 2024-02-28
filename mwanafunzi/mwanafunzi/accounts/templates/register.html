@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+
+{% load static %}
+{% block title %} Register {% endblock %}
+
+{% block content %}
+<div class="register">
+  <div class="header">
+    <img src="{% static 'img/Logo.svg'%}" />
+  </div>
+
+  <div class="content">
+    <form method="POST" action="">
+      {% csrf_token %}
+      {% for field in form %}
+        <div class="field">
+          {% if field.name != 'password1' and field.name != 'password2' %}
+          <img style="background-color:white; border-radius:50%; width:30px; height:30px" src="{% static 'img/user.svg' %}" />
+          {% else %}
+           <img style="background-color:white; width:20px; height:20px" src="{% static 'img/key-square.svg' %}" />        
+          {% endif %}
+
+          {{ field }}
+        </div>
+      {% endfor %}
+      <div style="width:100%; display:flex; align-items:center; justify-content:center">
+        <input class='submit' type="submit" value="REGISTER" />
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
