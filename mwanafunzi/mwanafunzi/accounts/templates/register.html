@@ -4,13 +4,23 @@
 {% block title %} Register {% endblock %}
 
 {% block content %}
+{% if form.errors %}
+<div class="err-messages">
+  <div style="height:10px; width:10px; border-radius: 50%; background-color:white; position:absolute; top:5px; left:10px">
+  </div>
+  <div style="height:10px; width:10px; border-radius: 50%; background-color:white; position:absolute; top:5px; right:10px">
+  </div>
+
+  <p style="color:white; font-size:12px; width:150px">Something went wrong, try again</p>
+</div>
+{% endif %}
 <div class="register">
   <div class="header">
     <img src="{% static 'img/Logo.svg'%}" />
   </div>
 
   <div class="content">
-    <form method="POST" action="">
+    <form method="POST" action="" class="register-form">
       {% csrf_token %}
       {% for field in form %}
         <div class="field">

@@ -1,15 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap')
 * {
   margin:0;  
   padding: 0;
   box-sizing: border-box;
   }
 html{
-	display:flex;
-	align-items:center;
-	justify-content:center;
+  font-family: "Roboto", sans-serif;
 }
-body{
+.auth{
 	display:flex;
+  flex-direction:column;
 	align-items:center;
 	justify-content:center;
 	height:100vh;
@@ -56,13 +56,21 @@ body{
   align-items:center;
   justify-content:center;
 }
-form{
+.register-form{
   display:flex;
   flex-direction: column;
   justify-content:space-evenly;
   width:80%;
   height: 300px;
 }
+.login-form{
+  display:flex;
+  flex-direction: column;
+  justify-content:space-evenly;
+  width:80%;
+  height: 180px;
+}
+
 .field{
   display:flex;
   height:40px;
@@ -90,11 +98,72 @@ form{
   padding-left: 10px;
 }
 .login-header{
-  height:220px;
+  height:200px;
   width:90%;
-  background-color:red;
+  background-color:black;
   border-radius: 30px;
+  overflow:hidden;
+  position:relative;
+}
+.login-header-title{
+  height:200px;
+  width:200px;
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%, -50%);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content: space-evenly;
 }
 .login-content{
-  height:200px;
+  height:180px;
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+}
+.login-header img{
+  height: 100%;
+  width: 100%;
+  object-fit:cover;
+  object-position:center;
+  opacity: 0.25;
+  filter:blur(1px)
+}
+.login-header-title img{
+  filter:blur(0px);
+  opacity: 1;
+  width: 100px;
+  height: 100px;
+}
+.login-header-title h1{
+  font-size: 24px;
+  font-weight: 900;
+  color: white;
+  margin:0
+}
+.login p{
+  margin:0
+}
+.login p span{
+  font-weight:bold;
+  cursor:pointer;
+  transition:all .3s;
+}
+.login p span:hover{
+  border-bottom: 1px solid black
+}
+.err-messages{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:50px;
+  width:200px;
+  background-color:black;
+  margin-bottom: 20px;
+  border-radius:10px;
 }
