@@ -31,8 +31,8 @@
   </div>
 
   <div class="login-content">
+    {% csrf_token %}
     <form method="POST" action="" class="login-form">
-      {% csrf_token %}
       <div class="field">
         <img style="background-color:white; border-radius:50%; width:30px; height:30px" src="{% static 'img/user.svg' %}" />
 

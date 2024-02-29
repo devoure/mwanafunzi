@@ -5,7 +5,7 @@
    padding: 0;
    box-sizing: border-box;
 }
-.dashboard{
+.payment{
   font-family: "Roboto", sans-serif;
   height:100vh;
   width:100vw;
@@ -74,6 +74,7 @@
 .logout:hover img{
   background-color: white
 }
+
 .content-container{
   width: 100%;
   height: 85%;
@@ -82,128 +83,110 @@
   justify-content: center
 }
 .content{
-  height:450px;
+  height:500px;
   width:750px;
   border-radius: 40px;
   box-shadow: 0px 0px 12px 8px rgba(0,0,0,0.25);
   overflow:hidden;
   display:flex;
-  justify-content:space-between;
+  justify-content:space-evenly;
+  align-items:center;
 }
 .content-left{
-  height: 100%;
-  width: 50%;
-  overflow: hidden
+  height:90%;
+  width:45%;
+  background-color: black;
+  border-radius: 30px;
+  overflow:hidden;
+  position: relative;
 }
 .content-right{
-  height: 100%;
-  width: 50%;
-  overflow: hidden;
+  height:90%;
+  width:45%;
+  border-radius: 30px;
+  border: 1px solid black;
   display:flex;
-  flex-direction:column;
-  justify-content: space-between;
-
+  justify-content:center;
+  align-items:center;
 }
-
 .content-left img{
   height: 100%;
-  width: 500px;
+  width:500px;
   object-fit: cover;
-  object-position: center
+  object-position: center;
+  opacity: .25;
+  filter: blur(2px)
 }
-.profile-pic{
-  height: 25%;
-  width: 100%;
-  background-color: black;
+.content-left-text{
+  height: 220px;
+  width: 220px;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translate(-50%, -50%);
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center
+  align-items: center;
 }
-.greet{
+.cash{
+  height:80px;
+  width:80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color:white;
+
+}
+.payment-slip{
+  height:450px;
+  width: 280px;
+  display:flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+.field{
   width: 100%;
   height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content:center
-}
-.greet p{
-  font-size: 20px;
-}
-.more{
-  width: 100%;
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly
-}
-.results{
-  height:80%;
-  width:150px;
-  border-radius: 30px;
-  box-shadow: 0px 0px 12px 2px rgba(0,0,0,0.25);
-  overflow:hidden;
-  display:flex;
-  flex-direction: column;
-  justify-content:space-between;
-
-}
-.balance{
-  height:80%;
-  width:150px;
-  border-radius: 30px;
-  box-shadow: 0px 0px 12px 2px rgba(0,0,0,0.25);
-  overflow:hidden;
-  display:flex;
-  flex-direction: column;
-  justify-content:space-between;
-
-}
-.results-header{
-  width: 100%;
-  height: 35%;
-  background-color: #9B94E4;
+  border-bottom:1px solid black;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 }
-.balance-header{
-  width: 100%;
-  height: 35%;
-  background-color: #E494BB;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+.text-input{
+  width:200px;
+  height:30px;
+  border:0px;
+  padding-left: 10px;
 }
-.payment-tab{
-  width: 100%;
-  height: 65px;
-  display:flex;
-  align-items:center;
-  justify-content: center;
-}
-.payment-button{
-  width: 200px;
-  height:75%;
-  border: 1px solid black;
-  border-radius: 20px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
-  transition: all .3s;
-  text-decoration: none;
-}
-.payment-button:hover{
-  background-color: black
-}
-.payment-button:hover h2{
-  color: white
-}
-.payment-button:hover img{
+select{
+  width:200px;
+  height:30px;
   background-color: white;
+  border: none;
+  transition: all .3s;
+  padding-left: 10px;
+}
+select:hover{
+  cursor: pointer;
+  background: black;
+  color: white;
+}
+option{
+  padding-left: 10px;
+  transition: all .3s;
+}
+.submit{
+  width:120px;
+  height: 40px;
   border-radius:10px;
+  border: 1px solid black;
+  background-color: white;
+  transition: all .3s;
+  cursor:pointer
 }
-.payment-button h2{
-  color:black;
+.submit:hover{
+  background-color:black;
+  color:white
 }
-
