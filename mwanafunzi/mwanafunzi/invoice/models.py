@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from payment.models import PaymentForm
+from django.utils import timezone
 
 # Create your models here.
 class FeeStructure(models.Model):
@@ -53,3 +54,10 @@ class Invoice(models.Model):
     payment_type = models.CharField(max_length=20, choices=PAY_CHOICES)
     safaricom_service = models.CharField(max_length=20, choices=SAF_SERVICES)
     more = models.CharField(max_length=50)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def save(self, *args, **kwargs):
+        # Update the 'updated_at' field whenever the object is saved
+        self.updated_at = timezone.now()
+        super().save(*args, **kwargs)

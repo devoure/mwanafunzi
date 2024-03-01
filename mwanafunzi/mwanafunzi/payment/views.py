@@ -11,7 +11,7 @@ def payment_form(request):
             slip = form.save(commit=False)
             slip.student = request.user
             slip.save()
-            return redirect('print-invoice')
+            return redirect('print-invoice', payslip=form.cleaned_data)
     else:
         form = StudentPaymentForm()
 

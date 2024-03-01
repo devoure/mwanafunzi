@@ -4,5 +4,123 @@
 {% block title %} Invoice {% endblock %}
 
 {% block content %}
-  Invoice
+<div class="header">
+  <div class="header-left">
+    <img src="{% static 'img/Logo.svg'%}" />
+    <p>DEV / UNIVERSITY</p>
+  </div>
+
+  <div class="header-right">
+    <p>ATHUMANI BAKARI</p>
+    <div class="logout">
+      <img src="{% static 'img/log-out.svg' %}" />
+    </div>
+  </div>
+</div>
+
+
+<div class="content-container">
+  <div class="content">
+    <div class="invoice-header" />
+      <img src ="{% static 'img/Logo.svg' %}" />
+      <h3>INVOICE</h3>
+    </div>
+
+    <div class="invoice-bill">
+      <div class="invoice-bill-left">
+        <h5>BILLED TO:</h5>
+        <div>
+          <p>Sureiya Awan</p>
+          <p>+2556366363</p>
+        </div>
+      </div>
+
+      <div class="invoice-bill-right">
+        <div>
+          <p>Invoice No. 12345</p>
+          <p>16 June 2024</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="invoice-bill-details">
+      <div class="invoice-bill-top">
+        <div class="invoice-bill-top-header">
+          <div style="width:180px;">
+            <h5>Student Name (ID)</h5>
+          </div>
+
+          <div style="width: 160px">
+            <h5>Course</h5>
+          </div>
+
+          <div style="width: 30px">
+            <h5>Year</h5>
+          </div>
+
+          <div style="width: 50px">
+            <h5>Semester</h5>
+          </div>
+
+        </div>
+        <div class="invoice-bill-top-detail">
+          <div style="width:180px;">
+            <h5>Athumani Bakari (45363)</h5>
+          </div>
+
+          <div style="width: 160px">
+            <h5>Computer Technology</h5>
+          </div>
+
+          <div style="width: 30px">
+            <h5>4</h5>
+          </div>
+
+          <div style="width: 50px">
+            <h5>1</h5>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="invoice-bill-bottom">
+        <div class="bill-fee">
+          <div style="display: flex; justify-content: space-evenly;">
+            <h5 style="font-weight: 700;">Tuition Fee: </h5>
+            <h5 style="font-weight: 300;">Ksh: 200,000</h5>
+          </div>
+
+          <div style="display: flex; justify-content: space-evenly;">
+            <h5 style="font-weight: 700;">Tax (0%): </h5>
+            <h5 style="font-weight: 300;">Ksh: 0.00</h5>
+          </div>
+
+          <div style="width:100%; height:45px; display: flex; justify-content: space-evenly; border-top: 1px solid black; align-items:center;">
+            <h5 style="font-weight: 700; font-size:16px">Total: </h5>
+            <h5 style="font-weight: 700; font-size:16px">Ksh: 200,000</h5>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="invoice-footer">
+      <div class="invoice-footer-left">
+        <h5>PAYMENT INFORMATION</h5>
+        <div>
+          <p>Safaricom MPESA</p>
+          <p>Pay Bill</p>
+          <p>54545545</p>
+        </div>
+      </div>
+
+      <div class="invoice-footer-right">
+        <div>
+          <p>Dev University</p>
+          <p>Somewhere, Kenya</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
