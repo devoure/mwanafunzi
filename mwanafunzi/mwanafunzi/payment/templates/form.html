@@ -35,11 +35,17 @@
        <form method="POST" action="" class="payment-slip">
          {% csrf_token %}
          {% for field in form %}
-            {% if field.name == 'first_name' or field.name == 'second_name' %}
+            {% if field.name == 'full_name' %}
                 <div class="field">
                   <img src="{% static 'img/user.svg' %}" />
                   {{ field }}
                 </div>
+            {% elif field.name == 'phone_number' %}
+                <div class="field">
+                  <img src="{% static 'img/smartphone.svg' %}" />
+                  {{ field }}
+                </div>
+
             {% elif field.name == 'course' %}
                 <div class="field">
                   <img src="{% static 'img/briefcase.svg' %}" />

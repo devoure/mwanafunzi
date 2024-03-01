@@ -41,7 +41,8 @@ INSTALLED_APPS = [
 
     'accounts.apps.AccountsConfig',
     'dashboard.apps.DashboardConfig',
-    'payment.apps.PaymentConfig'
+    'payment.apps.PaymentConfig',
+    'invoice.apps.InvoiceConfig'
 ]
 
 MIDDLEWARE = [

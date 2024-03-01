@@ -1,22 +1,19 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import StudentPaymentForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def payment_form(request):
-    initial_data = {
-        'student':request.user
-    }
-
     if request.method == 'POST':
-        form = StudentPaymentForm(request.POST, initial=initial_data)
+        form = StudentPaymentForm(request.POST)
 
         if form.is_valid():
-            form.save()
-            print(">>> SAVED")
-        else:
-            print(">>> NOT SAVED", form.errors)
+            slip = form.save(commit=False)
+            slip.student = request.user
+            slip.save()
+            return redirect('print-invoice')
     else:
-        form = StudentPaymentForm(initial=initial_data)
+        form = StudentPaymentForm()
 
     context = {'form' : form}
 
