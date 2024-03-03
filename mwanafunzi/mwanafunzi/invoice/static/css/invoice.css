@@ -88,11 +88,10 @@
   width:600px;
   border-radius: 0px;
   box-shadow: 0px 0px 12px 8px rgba(0,0,0,0.25);
-  overflow:hidden;
   display:flex;
   flex-direction: column;
   align-items:center;
-
+  position: relative;
 }
 .invoice-header{
   height: 80px;
@@ -231,4 +230,56 @@
   font-weight: 300;
   font-size: 12px;
 }
+.error-content{
+  height:400px;
+  width:400px;
+  border-radius: 30px;
+  box-shadow: 0px 0px 12px 8px rgba(0,0,0,0.25);
+  overflow:hidden;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: space-evenly;
 
+}
+.error-content div{
+  width: 80%;
+
+}
+.error-content a{
+  width: 100px;
+  height: 40px;
+  border: 1px solid black;
+  border-radius: 10px;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all, .3s;
+}
+.error-content a:hover{
+  background-color: black;
+  color: white;
+}
+.mpesa{
+  width: 150px;
+  height: 50px;
+  position: absolute;
+  right:-75px;
+  bottom: 50px;
+  background-color: black;
+  color: white;
+  font-weight: 700;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all .3s;
+  text-decoration: none;
+}
+.mpesa:hover{
+  background-color: green;
+}

@@ -3,6 +3,7 @@ from .forms import StudentPaymentForm
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+@login_required(login_url='login')
 def payment_form(request):
     if request.method == 'POST':
         form = StudentPaymentForm(request.POST)
@@ -11,7 +12,10 @@ def payment_form(request):
             slip = form.save(commit=False)
             slip.student = request.user
             slip.save()
-            return redirect('print-invoice', payslip=form.cleaned_data)
+            pay_slip = form.cleaned_data
+            pay_slip.update({'id':slip.id})
+            request.session['pay_slip'] = pay_slip
+            return redirect('print-invoice')
     else:
         form = StudentPaymentForm()
 

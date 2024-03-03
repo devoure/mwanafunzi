@@ -48,8 +48,8 @@ class Invoice(models.Model):
         ('BG', 'Buy Goods'),
         ('PB', 'Pay Bill')
     ]
-    student = models.OneToOneField(User, on_delete=models.CASCADE)
-    fee_structure = models.OneToOneField(FeeStructure, on_delete=models.CASCADE)
+    student = models.ForeignKey(User, on_delete=models.CASCADE, related_name='invoices')
+    fee_structure = models.ForeignKey(FeeStructure, on_delete=models.CASCADE)
     payment_slip = models.OneToOneField(PaymentForm, on_delete=models.CASCADE)
     payment_type = models.CharField(max_length=20, choices=PAY_CHOICES)
     safaricom_service = models.CharField(max_length=20, choices=SAF_SERVICES)
