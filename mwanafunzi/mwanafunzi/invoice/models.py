@@ -61,3 +61,6 @@ class Invoice(models.Model):
         # Update the 'updated_at' field whenever the object is saved
         self.updated_at = timezone.now()
         super().save(*args, **kwargs)
+
+
+

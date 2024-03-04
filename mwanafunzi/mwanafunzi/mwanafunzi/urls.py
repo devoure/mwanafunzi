@@ -24,5 +24,6 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('dashboard/', include('dashboard.urls')),
     path('payment/', include('payment.urls')),
-    path('invoice/', include('invoice.urls'))
+    path('invoice/', include('invoice.urls')),
+    path('mpesa/', include('mpesa.urls'))
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

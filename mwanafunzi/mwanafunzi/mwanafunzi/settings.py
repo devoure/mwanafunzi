@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-^(!umn_0g5b9*ri=y$3eez3dvh_mb+7(#^5_t2q^0uvur7+zs(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*'
+ ]
 
 
 # Application definition
@@ -39,16 +40,28 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'corsheaders',
+
     'accounts.apps.AccountsConfig',
     'dashboard.apps.DashboardConfig',
     'payment.apps.PaymentConfig',
-    'invoice.apps.InvoiceConfig'
+    'invoice.apps.InvoiceConfig',
+    'mpesa.apps.MpesaConfig'
+]
+
+CORS_ALLOWED_ORIGINS = [
+    'https://d3d7-102-164-60-30.ngrok-free.app'
+]
+CORS_ALLOW_ALL_ORIGINS = True
+CSRF_TRUSTED_ORIGINS = [
+    'https://d3d7-102-164-60-30.ngrok-free.app'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -117,6 +130,8 @@ USE_I18N = True
 
 USE_TZ = True
 
+#daraja api
+MPESA_TOKEN = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/

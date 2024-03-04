@@ -3,6 +3,7 @@ from .models import FeeStructure, Invoice
 from payment.models import PaymentForm
 from django.db import IntegrityError
 from django.contrib.auth.decorators import login_required
+from django.core.serializers import serialize
 
 
 # Create your views here.
@@ -10,6 +11,7 @@ from django.contrib.auth.decorators import login_required
 def print_invoice(request):
     pay_slip = request.session.get('pay_slip')
     slip_instance = PaymentForm.objects.get(id=pay_slip['id'])
+    till = '174379'
     try:
         fee_structure = FeeStructure.objects.get(sponsorship=pay_slip['sponsorship'],
                                                  course=pay_slip['course'],
@@ -31,10 +33,13 @@ def print_invoice(request):
                                          payment_slip=slip_instance,
                                          payment_type=Invoice.PAY_CHOICES[0][0],
                                          safaricom_service=Invoice.SAF_SERVICES[1][0],
-                                         more="3443344")
+                                         more=till)
+
+        request.session['invoice'] = {'id':invoice.pk}
     except IntegrityError:
         invoice = Invoice.objects.get(payment_slip=slip_instance)
 
+        print(">>> invoice", request.session['invoice'])
     context = {'invoice':invoice}
 
 
