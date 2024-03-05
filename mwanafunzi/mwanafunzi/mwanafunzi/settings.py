@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*'
  ]
-
+NGROK_URL = 'https://6794-102-164-60-30.ngrok-free.app'
 
 # Application definition
 
@@ -50,11 +50,11 @@ INSTALLED_APPS = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    'https://d3d7-102-164-60-30.ngrok-free.app'
+    NGROK_URL
 ]
 CORS_ALLOW_ALL_ORIGINS = True
 CSRF_TRUSTED_ORIGINS = [
-    'https://d3d7-102-164-60-30.ngrok-free.app'
+    NGROK_URL
 ]
 
 MIDDLEWARE = [

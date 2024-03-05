@@ -26,7 +26,7 @@ def initiate(request):
           "PartyA": invoice.payment_slip.phone_number[1:],    
           "PartyB": invoice.more,    
           "PhoneNumber":invoice.payment_slip.phone_number[1:],    
-          "CallBackURL": "https://d3d7-102-164-60-30.ngrok-free.app/mpesa/complete",    
+          "CallBackURL": "{}/mpesa/complete".format(settings.NGROK_URL),
           "AccountReference":"Dev University",    
           "TransactionDesc":"Test"
         }
