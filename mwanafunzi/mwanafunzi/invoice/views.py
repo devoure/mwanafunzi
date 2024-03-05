@@ -39,7 +39,6 @@ def print_invoice(request):
     except IntegrityError:
         invoice = Invoice.objects.get(payment_slip=slip_instance)
 
-        print(">>> invoice", request.session['invoice'])
     context = {'invoice':invoice}
 
 
