@@ -4,6 +4,36 @@
 {% block title %} Invoice {% endblock %}
 
 {% block content %}
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <div style="height:20%; width: 100%; display:flex; align-items: center; justify-content: end;">
+      <div class="close" id="close-btn">X</div>
+    </div>
+
+    <div style="height:80%; width: 100%; display:flex; align-items:center; justify-content:center; flex-direction:column">
+      <div class="pay-option">
+        <div class="pay-option-icon">
+          <img src="{% static 'img/smartphone.svg' %}" style="height:50%; width: 50%"/>
+        </div>
+        <a class="option-mpesa" href="{% url 'mpesa-initiate' %}">
+          Lipa na MPESA
+        </a>
+      </div>
+
+      <div class="pay-option">
+        <div class="pay-option-icon">
+          <img src="{% static 'img/wallet-cards.svg' %}" style="height:50%; width: 50%"/>
+        </div>
+        <a class="option-card" href="#">
+          Pay with Card
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
 <div class="header">
   <div class="header-left">
     <img src="{% static 'img/Logo.svg'%}" />
@@ -14,16 +44,16 @@
     <p>ATHUMANI BAKARI</p>
     <a href="{% url 'logout'%}" class="logout">
       <img src="{% static 'img/log-out.svg' %}" />
-    </div>
+    </a>
   </div>
 </div>
 
 
 <div class="content-container">
   <div class="content">
-    <a href="{% url 'mpesa-initiate' %}" class="mpesa">
-      Lipa na MPESA
-    </a>
+    <div class="pay" id="pay-btn">
+      Pay Now
+    </div>
     <div class="invoice-header" />
       <img src ="{% static 'img/Logo.svg' %}" />
       <h3>INVOICE</h3>

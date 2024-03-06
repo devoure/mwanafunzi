@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+import braintree
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,7 +30,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*'
  ]
-NGROK_URL = 'https://6794-102-164-60-30.ngrok-free.app'
+NGROK_URL = 'https://3033-102-164-60-30.ngrok-free.app'
 
 # Application definition
 
@@ -46,7 +48,8 @@ INSTALLED_APPS = [
     'dashboard.apps.DashboardConfig',
     'payment.apps.PaymentConfig',
     'invoice.apps.InvoiceConfig',
-    'mpesa.apps.MpesaConfig'
+    'mpesa.apps.MpesaConfig',
+    'cards.apps.CardsConfig'
 ]
 
 CORS_ALLOWED_ORIGINS = [
@@ -88,7 +91,19 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mwanafunzi.wsgi.application'
 
+# Braintree
+load_dotenv()
 
+BRAINTREE_MERCHANT_ID = os.getenv('BRAINTREE_MERCHANT_ID')
+BRAINTREE_PUBLIC_KEY = os.getenv('BRAINTREE_PUBLIC_KEY')
+BRAINTREE_PRIVATE_KEY = os.getenv('BRAINTREE_PRIVATE_KEY')
+
+BRAINTREE_CONF = braintree.Configuration(
+        braintree.Environment.Sandbox,
+        BRAINTREE_MERCHANT_ID,
+        BRAINTREE_PUBLIC_KEY,
+        BRAINTREE_PRIVATE_KEY
+        )
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
