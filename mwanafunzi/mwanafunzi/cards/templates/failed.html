@@ -1,0 +1,30 @@
+{% extends 'braintree.html' %}
+
+{% load static %}
+{% block title %} Braintree Fail {% endblock %}
+
+{% block content %}
+<div class="header">
+  <div class="header-left">
+    <img src="{% static 'img/Logo.svg'%}" />
+    <p>DEV / UNIVERSITY</p>
+  </div>
+
+  <div class="header-right">
+    <p>ATHUMANI BAKARI</p>
+    <a href="{% url 'logout'%}" class="logout">
+      <img src="{% static 'img/log-out.svg' %}" />
+    </a>
+  </div>
+</div>
+
+
+<div class="content-container">
+  <div class="content">
+    <img src="{% static 'img/x-circle.svg' %}" class="status-logo"/>
+    <h1>Payment Failed</h1>
+    <a href="{% url 'braintree-process' %}" class="pay-credit">Try Again</a>
+    <a href="{% url 'dashboard' %}" class="pay-credit">Dashboard</a>
+  </div>
+</div>
+{% endblock %}
