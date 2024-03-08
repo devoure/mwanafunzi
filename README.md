@@ -1,7 +1,7 @@
 # :school: Student Fee Payment Portal
-> :bulb: Implemented with safaricom daraja API 
+> :bulb: Implemented with safaricom daraja API and Braintree
 ## 💬 Description
-> This is a project that shows the concept of payment integration with safaricom daraja API that allows STK push to a student to complete payments of fees.
+> This is a project that shows the concept of payment integration with safaricom daraja API that allows STK push to a student to complete payments of fees and also braintree to allow credit card payments.
 > The projects allows a user (student)  to login or register an account and access their dashboard. From this dashboard they can access payment links for their fees covering various fee structures on modules offered by the university.
 ## 📜 More
 
@@ -10,6 +10,10 @@
 > 
 > ## Daraja API
 > A service provided in the safaricom dev portal to allow mpesa STK push notifications from a merchant (the university) to the client (student)  for payment of fees. The user triggers an STK push from the django app and receives a prompt on their phone to complete payment in an easier flow.
+
+> ## Braintree
+> A payment gateway that allows processing payments for credit cards, apple pay, paypal etc in your project.
+
 
 > 
 >## Mwanafunzi
